@@ -1,6 +1,4 @@
-import htm from "htm";
-import React from "react";
-const html = htm.bind(React.createElement);
+import { html } from "htm/preact/index.js";
 
 export const title = "Home!";
 

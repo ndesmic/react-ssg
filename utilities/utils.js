@@ -1,10 +1,6 @@
 import { join } from "path";
 import { promises as fs } from "fs";
 
-export function getRootUrl(){
-	return new URL("../", import.meta.url);
-}
-
 export const exists = path =>
 	fs.access(path).then(() => true).catch(() => false);
 
