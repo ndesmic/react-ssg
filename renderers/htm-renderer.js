@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
-import ReactDOM from "react-dom/cjs/react-dom-server.node.production.min.js";
 import { fileURLToPath, pathToFileURL } from "url";
 import yargs from "yargs";
+import render from "preact-render-to-string";
 
 import { ensure } from "../utilities/utils.js";
 
@@ -18,6 +18,6 @@ for(const file of files){
 	const outfile = new URL(file.replace(/\.js$/, ".html"), outputUrl);
 	const path = new URL(file, templatesUrl);
 	const pageData = await import(path);
-	const output = ReactDOM.renderToString(layout(pageData));
+	const output = render(layout(pageData));
 	await fs.writeFile(fileURLToPath(outfile), output);
 }
