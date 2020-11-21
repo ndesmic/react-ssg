@@ -5,13 +5,19 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "render": "node renderers/htm-renderer.js",
+    "render:preact": "node renderers/htm-preact-renderer.js -t templates/preact/ -o output/preact/",
+    "render:react": "node renderers/htm-react-renderer.js -t templates/react/ -o output/react/",
+    "serve": "http-server -c-1 .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "htm": "^3.0.4",
+    "preact": "^10.5.7",
+    "preact-render-to-string": "^5.1.12"
+  },
+  "devDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "yargs": "^16.1.1"

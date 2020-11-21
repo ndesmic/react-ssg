@@ -1,6 +1,4 @@
-import htm from "htm";
-import React from "react";
-const html = htm.bind(React.createElement);
+import { html } from "htm/react/index.mjs";
 
 export const layout = data => html`
 <html>
@@ -8,7 +6,7 @@ export const layout = data => html`
 		<title>${data.title}</title>
 	</head>
 	<body>
-		${data.page}
+		${data.body}
 	</body>
 </html>
 `;
