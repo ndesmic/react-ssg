@@ -1,0 +1,8 @@
+{
+	"imports": {
+		"preact" : "/output/preact/node_modules/preact/dist/preact.mjs",
+		"htm/preact/index.mjs" : "/output/preact/node_modules/htm/preact/index.mjs",
+		"htm": "/output/preact/node_modules/htm/dist/htm.mjs",
+		"preact/hooks/dist/hooks.mjs": "/output/preact/node_modules/preact/hooks/dist/hooks.mjs"
+	}
+}

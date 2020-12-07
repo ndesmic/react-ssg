@@ -19,3 +19,8 @@ export async function ensure(path) {
 		}
 	}
 }
+
+export async function readJson(path) {
+	const content = await fs.readFile(path, "utf-8");
+	return JSON.parse(content);
+}

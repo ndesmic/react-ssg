@@ -7,7 +7,9 @@
   "scripts": {
     "render:preact": "node renderers/htm-preact-renderer.js -t templates/preact/ -o output/preact/",
     "render:react": "node renderers/htm-react-renderer.js -t templates/react/ -o output/react/",
-    "serve": "http-server -c-1 .",
+    "serve:preact": "http-server -c-1 . -o output/preact/home.preact.html",
+    "clean": "rimraf output",
+    "rebuild": "rimraf output && node renderers/htm-react-renderer.js -t templates/react/ -o output/react/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,8 +20,10 @@
     "preact-render-to-string": "^5.1.12"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
     "yargs": "^16.1.1"
   }
 }
