@@ -10,7 +10,7 @@ export const exists = path =>
 
 export async function ensure(path) {
 	const pathSplit = path.split(/[/\\]/);
-	let currentPath = pathSplit[0];
+	let currentPath = pathSplit[0] || "/";
 	for await (let part of pathSplit.slice(1, pathSplit.length - 1)) {
 		if(!part.trim()) continue;
 		currentPath = join(currentPath, part);
